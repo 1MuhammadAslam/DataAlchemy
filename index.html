@@ -2,113 +2,409 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Aslam | Data Analyst</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --secondary: #1e293b;
+      --accent: #f59e0b;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --dark-gray: #64748b;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-      padding: 2em;
-      max-width: 900px;
-      margin: auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f5f9;
+      color: var(--secondary);
       line-height: 1.6;
     }
-    h1, h2 {
-      color: #007acc;
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
     }
-    ul {
-      list-style-type: none;
-      padding: 0;
+    
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e2e8f0;
+      position: relative;
     }
-    li {
-      margin: 0.5em 0;
+    
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    a {
-      text-decoration: none;
-      color: #0066cc;
+    
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
     }
-    a:hover {
-      text-decoration: underline;
+    
+    .tagline {
+      font-size: 1.2rem;
+      color: var(--dark-gray);
+      margin-bottom: 1rem;
+      font-weight: 500;
     }
+    
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .skill-chip {
+      background-color: var(--primary-light);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+    
     .section {
-      margin-bottom: 2.5em;
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
     }
-    .project {
-      margin-bottom: 1.5em;
+    
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     }
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin: 2em 0;
+    
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--secondary);
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-image {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+      background-color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray);
+      font-size: 3rem;
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .project-tools {
+      color: var(--dark-gray);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    
+    .project-description {
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+    
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .project-link:hover {
+      color: var(--primary-light);
+    }
+    
+    .project-link i {
+      margin-right: 0.5rem;
+    }
+    
+    .resume-download {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+    
+    .resume-download:hover {
+      background-color: var(--primary-light);
+    }
+    
+    .resume-download i {
+      margin-right: 0.5rem;
+    }
+    
+    .connect-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .connect-link {
+      display: inline-flex;
+      align-items: center;
+      background-color: white;
+      color: var(--primary);
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s;
+    }
+    
+    .connect-link:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .connect-link i {
+      margin-right: 0.5rem;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>👋 Hi, I'm Muhammad Aslam</h1>
-  <p><strong>Data Analyst | MSc Data Science | Excel • Power BI • Python • SQL • Tableau</strong></p>
-  
-  <div class="section">
-    <h2>📄 About Me</h2>
-    <p>I am a data-driven problem solver with a master's in Data Science from Middlesex University Dubai. I specialize in analyzing operational data, creating dashboards, and using machine learning and BI tools to turn data into business insights.</p>
-  </div>
-
-  <hr>
-
-  <div class="section">
-    <h2>📁 Projects</h2>
-
-    <div class="project">
-      <h3>🔍 HR Analytics Dashboard</h3>
-      <p><strong>Tools:</strong> Power BI, Python (Logistic Regression), Excel</p>
-      <p>Analyzed employee data to understand attrition trends and built a prediction model for future resignations.</p>
-      <a href="https://github.com/1MuhammadAslam/HR-Analytics" target="_blank">🔗 View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>🏡 Airbnb Revenue Prediction (London)</h3>
-      <p><strong>Tools:</strong> R, Python, Tableau, Power BI</p>
-      <p>Built a predictive model using features like location, price, and reviews to estimate listing revenue.</p>
-      <a href="https://github.com/1MuhammadAslam/Airbnb-Revenue" target="_blank">🔗 View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>📊 Sales Forecasting using Time Series</h3>
-      <p><strong>Tools:</strong> Python (ARIMA, Prophet), Excel, Power BI</p>
-      <p>Forecasted monthly product sales using ARIMA and Facebook Prophet to support stock planning.</p>
-      <a href="https://github.com/1MuhammadAslam/Sales-Forecasting" target="_blank">🔗 View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>📉 Financial Dashboard in Tableau</h3>
-      <p><strong>Tools:</strong> Tableau, Excel</p>
-      <p>Created an interactive dashboard to monitor financial performance, revenue trends, and cost efficiency.</p>
-      <a href="https://public.tableau.com/app/profile/yourprofile" target="_blank">🔗 View Dashboard</a>
-    </div>
-
-    <div class="project">
-      <h3>🧠 Benford’s Law – Fraud Detection</h3>
-      <p><strong>Tools:</strong> Python (pandas, matplotlib), Chi-Square, KS Test</p>
-      <p>Tested real datasets against Benford’s Law to uncover anomalies and potential fraud cases.</p>
-      <a href="https://github.com/1MuhammadAslam/Benfords-Law-Project" target="_blank">🔗 View on GitHub</a>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="section">
-    <h2>📥 Resume</h2>
-    <p><a href="Aslam resume.pdf" download>📄 Click here to download my resume (PDF)</a></p>
-  </div>
-
-  <hr>
-
-  <div class="section">
-    <h2>🔗 Connect</h2>
-    <ul>
-      <li><a href="mailto:maslamnavas@gmail.com">📧 Email me</a></li>
-      <li><a href="https://www.linkedin.com/in/muhammad-aslamuae" target="_blank">🔗 LinkedIn</a></li>
-      <li><a href="https://github.com/1MuhammadAslam" target="_blank">🐙 GitHub</a></li>
-    </ul>
+  <div class="container">
+    <header>
+      <!-- Add your profile image here -->
+      <!-- <img src="profile.jpg" alt="Muhammad Aslam" class="profile-image"> -->
+      <div class="profile-image" style="background-color: #2563eb; color: white; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+        MA
+      </div>
+      <h1>Muhammad Aslam</h1>
+      <p class="tagline">Data Analyst | MSc Data Science</p>
+      <div class="skills">
+        <span class="skill-chip">Excel</span>
+        <span class="skill-chip">Power BI</span>
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">Tableau</span>
+        <span class="skill-chip">Machine Learning</span>
+      </div>
+    </header>
+    
+    <section class="section">
+      <h2><i class="fas fa-user"></i> About Me</h2>
+      <p class="about-text">
+        I am a data-driven problem solver with a master's in Data Science from Middlesex University Dubai. 
+        I specialize in analyzing operational data, creating interactive dashboards, and using machine learning 
+        and BI tools to transform raw data into actionable business insights. My passion lies in uncovering 
+        hidden patterns and telling compelling data stories that drive strategic decision-making.
+      </p>
+    </section>
+    
+    <section class="section">
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">HR Analytics Dashboard</h3>
+            <p class="project-tools">Power BI • Python • Excel</p>
+            <p class="project-description">
+              Analyzed employee data to understand attrition trends and built a prediction model for future resignations.
+            </p>
+            <a href="https://github.com/1MuhammadAslam/HR-Analytics" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Airbnb Revenue Prediction</h3>
+            <p class="project-tools">R • Python • Tableau</p>
+            <p class="project-description">
+              Built a predictive model using features like location, price, and reviews to estimate listing revenue.
+            </p>
+            <a href="https://github.com/1MuhammadAslam/Airbnb-Revenue" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Sales Forecasting</h3>
+            <p class="project-tools">Python • ARIMA • Prophet</p>
+            <p class="project-description">
+              Forecasted monthly product sales using time series models to support stock planning.
+            </p>
+            <a href="https://github.com/1MuhammadAslam/Sales-Forecasting" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Financial Dashboard</h3>
+            <p class="project-tools">Tableau • Excel</p>
+            <p class="project-description">
+              Created an interactive dashboard to monitor financial performance and revenue trends.
+            </p>
+            <a href="https://public.tableau.com/app/profile/yourprofile" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i> View Dashboard
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-search-dollar"></i>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Fraud Detection with Benford's Law</h3>
+            <p class="project-tools">Python • Pandas • Matplotlib</p>
+            <p class="project-description">
+              Tested real datasets against Benford's Law to uncover anomalies and potential fraud cases.
+            </p>
+            <a href="https://github.com/1MuhammadAslam/Benfords-Law-Project" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2><i class="fas fa-file-alt"></i> Resume</h2>
+      <p style="margin-bottom: 1.5rem;">
+        Download my full resume to learn more about my professional experience, education, and skills.
+      </p>
+      <a href="Aslam resume.pdf" download class="resume-download">
+        <i class="fas fa-download"></i> Download Resume (PDF)
+      </a>
+    </section>
+    
+    <section class="section">
+      <h2><i class="fas fa-link"></i> Connect</h2>
+      <div class="connect-links">
+        <a href="mailto:maslamnavas@gmail.com" class="connect-link">
+          <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-aslamuae" target="_blank" class="connect-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/1MuhammadAslam" target="_blank" class="connect-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </section>
+    
+    <footer>
+      <p>© 2023 Muhammad Aslam. All rights reserved.</p>
+    </footer>
   </div>
 </body>
 </html>
