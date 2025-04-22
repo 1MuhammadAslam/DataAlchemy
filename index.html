@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #6C63FF;
-      --primary-light: #8B85FF;
-      --secondary: #2D3748;
-      --accent: #FF6584;
-      --light: #F7FAFC;
-      --gray: #A0AEC0;
-      --dark-gray: #4A5568;
+      --primary: #4a6bff;
+      --primary-light: #6d85ff;
+      --secondary: #2d3748;
+      --accent: #ff6b6b;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --dark-gray: #4a5568;
+      --bg-color: #f5f7fa;
     }
     
     * {
@@ -25,175 +26,126 @@
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--secondary);
-      line-height: 1.6;
-      background-color: #f8f9fa;
-      background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-blend-mode: overlay;
-      background-color: rgba(248, 249, 250, 0.9);
-      position: relative;
-    }
-    
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(241, 245, 249, 0.98) 100%);
-      z-index: -1;
+      line-height: 1.5;
+      background-color: var(--bg-color);
+      background-image: 
+        linear-gradient(rgba(245, 247, 250, 0.9), rgba(245, 247, 250, 0.9)),
+        url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,30 L70,30 L70,70 L30,70 Z" fill="none" stroke="%23dbe4f0" stroke-width="0.5"/></svg>');
     }
     
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 2rem;
-      position: relative;
+      padding: 1.5rem;
     }
     
     header {
       text-align: center;
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      position: relative;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
     
     .profile-image {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid white;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-      background: linear-gradient(45deg, var(--primary), var(--accent));
-      color: white;
+      margin: 0 auto 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     
     h1 {
-      font-size: 2.8rem;
-      background: linear-gradient(45deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-size: 2rem;
+      color: var(--primary);
       margin-bottom: 0.5rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     
     .tagline {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       color: var(--dark-gray);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       font-weight: 500;
-      background-color: rgba(255, 255, 255, 0.7);
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      backdrop-filter: blur(5px);
     }
     
     .skills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.7rem;
-      margin-bottom: 1.5rem;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
     }
     
     .skill-chip {
       background-color: white;
       color: var(--primary);
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border: 1px solid rgba(108, 99, 255, 0.2);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(5px);
-      background-color: rgba(255, 255, 255, 0.8);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid rgba(74, 107, 255, 0.2);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
     
     h2 {
-      font-size: 1.9rem;
+      font-size: 1.4rem;
       color: var(--secondary);
-      margin-bottom: 1.8rem;
-      position: relative;
-      display: inline-block;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      border-radius: 2px;
+    h2 i {
+      color: var(--primary);
     }
     
     .section {
-      margin-bottom: 3.5rem;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    
-    .section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      background: rgba(255, 255, 255, 0.95);
+      margin-bottom: 2rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
     
     .about-text {
-      font-size: 1.15rem;
-      line-height: 1.8;
+      font-size: 1rem;
       color: var(--secondary);
+      margin-bottom: 1rem;
     }
     
     .highlight-box {
-      background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(255, 101, 132, 0.1));
-      padding: 2rem;
-      border-radius: 10px;
-      margin: 2rem 0;
-      border-left: 4px solid var(--primary);
-      backdrop-filter: blur(5px);
+      background-color: rgba(74, 107, 255, 0.05);
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      border-left: 3px solid var(--primary);
     }
     
     .project-preview {
       display: flex;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.7);
-      padding: 1.5rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
     
-    .project-preview:hover {
-      background: rgba(255, 255, 255, 0.9);
-      transform: translateY(-3px);
+    .project-preview:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
     
     .project-preview-image {
-      width: 200px;
-      height: 120px;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 120px;
+      height: 80px;
+      border-radius: 6px;
       flex-shrink: 0;
       background-color: #e2e8f0;
       display: flex;
@@ -214,88 +166,58 @@
     }
     
     .project-preview-title {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
       color: var(--primary);
     }
     
     .project-preview-tools {
       color: var(--dark-gray);
-      font-size: 0.95rem;
-      margin-bottom: 0.8rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
       font-weight: 500;
     }
     
     .project-preview-description {
-      margin-bottom: 1rem;
+      font-size: 0.95rem;
       color: var(--secondary);
+      margin-bottom: 0.5rem;
     }
     
     .project-link {
       display: inline-flex;
       align-items: center;
       color: var(--primary);
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 500;
       text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .project-link:hover {
-      color: var(--accent);
     }
     
     .project-link i {
-      margin-right: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-    
-    .project-link:hover i {
-      transform: translateX(5px);
+      margin-right: 0.3rem;
+      font-size: 0.8rem;
     }
     
     .see-all-projects {
-      display: inline-flex;
-      align-items: center;
-      background: linear-gradient(45deg, var(--primary), var(--accent));
-      color: white;
-      padding: 0.9rem 1.8rem;
-      border-radius: 8px;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      margin-top: 1rem;
+      color: var(--primary);
+      font-weight: 500;
       text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
-    }
-    
-    .see-all-projects:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
-    }
-    
-    .see-all-projects i {
-      margin-left: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-    
-    .see-all-projects:hover i {
-      transform: translateX(5px);
     }
     
     .resume-download {
       display: inline-flex;
       align-items: center;
-      background: linear-gradient(45deg, var(--primary), var(--accent));
+      background: var(--primary);
       color: white;
-      padding: 0.9rem 1.8rem;
-      border-radius: 8px;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
-    }
-    
-    .resume-download:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+      font-weight: 500;
+      font-size: 0.95rem;
     }
     
     .resume-download i {
@@ -304,8 +226,7 @@
     
     .connect-links {
       display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      gap: 1rem;
     }
     
     .connect-link {
@@ -313,20 +234,12 @@
       align-items: center;
       background-color: white;
       color: var(--primary);
-      padding: 0.9rem 1.8rem;
-      border-radius: 8px;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: 600;
-      border: 1px solid rgba(108, 99, 255, 0.2);
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-    
-    .connect-link:hover {
-      background: linear-gradient(45deg, var(--primary), var(--accent));
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid rgba(74, 107, 255, 0.2);
     }
     
     .connect-link i {
@@ -335,38 +248,29 @@
     
     footer {
       text-align: center;
-      padding: 3rem 0 2rem;
+      padding: 2rem 0 1rem;
       color: var(--gray);
-      font-size: 0.95rem;
-      background-color: rgba(255, 255, 255, 0.8);
-      margin-top: 2rem;
-      border-radius: 12px;
+      font-size: 0.85rem;
     }
     
     @media (max-width: 768px) {
       .container {
-        padding: 1.5rem;
-      }
-      
-      h1 {
-        font-size: 2.2rem;
-      }
-      
-      .section {
-        padding: 1.8rem;
+        padding: 1rem;
       }
       
       .project-preview {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.8rem;
       }
       
       .project-preview-image {
         width: 100%;
+        height: 120px;
       }
       
-      body {
-        background-attachment: scroll;
+      .connect-links {
+        flex-direction: column;
+        gap: 0.8rem;
       }
     }
   </style>
@@ -376,93 +280,87 @@
     <header>
       <div class="profile-image">MA</div>
       <h1>Muhammad Aslam</h1>
-      <p class="tagline">Transforming Data into Business Value</p>
+      <p class="tagline">Data Analyst | MSc Data Science</p>
       <div class="skills">
-        <span class="skill-chip">Data Analysis</span>
+        <span class="skill-chip">Excel</span>
         <span class="skill-chip">Power BI</span>
         <span class="skill-chip">Python</span>
         <span class="skill-chip">SQL</span>
         <span class="skill-chip">Tableau</span>
         <span class="skill-chip">Machine Learning</span>
-        <span class="skill-chip">Excel</span>
-        <span class="skill-chip">Data Visualization</span>
       </div>
     </header>
     
     <section class="section">
-      <h2><i class="fas fa-user" style="margin-right: 10px;"></i>About Me</h2>
+      <h2><i class="fas fa-user"></i>About Me</h2>
       <p class="about-text">
         Data Analyst with a master's in Data Science from Middlesex University Dubai and practical experience in analyzing operational data, building dashboards, and driving strategic insights. Passionate about transforming raw data into business value using machine learning, BI tools, and statistical analysis.
       </p>
       
       <div class="highlight-box">
         <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--primary);">My Approach:</p>
-        <p>I combine technical expertise with business acumen to deliver actionable insights. My process involves understanding business needs, exploring and cleaning data, applying appropriate analytical techniques, and communicating findings effectively through visualizations and reports.</p>
+        <p style="font-size: 0.95rem;">I combine technical expertise with business acumen to deliver actionable insights through data exploration, cleaning, analysis, and effective visualization.</p>
       </div>
     </section>
     
     <section class="section">
-      <h2><i class="fas fa-project-diagram" style="margin-right: 10px;"></i>Featured Projects</h2>
+      <h2><i class="fas fa-project-diagram"></i>Featured Projects</h2>
       
       <div class="project-preview">
         <div class="project-preview-image">
-          <!-- Replace with your actual project image -->
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="HR Analytics Dashboard">
+          <i class="fas fa-chart-line"></i>
         </div>
         <div class="project-preview-content">
           <h3 class="project-preview-title">HR Analytics Dashboard</h3>
           <p class="project-preview-tools">Power BI • Python • Logistic Regression</p>
           <p class="project-preview-description">
-            Comprehensive analysis of employee attrition patterns with predictive modeling to forecast future resignations and identify key factors influencing employee turnover.
+            Analyzed employee attrition patterns with predictive modeling to forecast resignations and identify key factors.
           </p>
           <a href="projects.html#hr-analytics" class="project-link">
-            <i class="fas fa-arrow-right"></i> View Project Details
+            <i class="fas fa-arrow-right"></i> View details
           </a>
         </div>
       </div>
       
       <div class="project-preview">
         <div class="project-preview-image">
-          <!-- Replace with your actual project image -->
-          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Airbnb Revenue Prediction">
+          <i class="fas fa-home"></i>
         </div>
         <div class="project-preview-content">
           <h3 class="project-preview-title">Airbnb Revenue Prediction</h3>
-          <p class="project-preview-tools">R • Python • Tableau • Regression Models</p>
+          <p class="project-preview-tools">R • Python • Tableau • Regression</p>
           <p class="project-preview-description">
-            Predictive model estimating potential revenue for Airbnb listings in London based on location, amenities, pricing, and review metrics.
+            Predictive model estimating potential revenue for Airbnb listings in London.
           </p>
           <a href="projects.html#airbnb" class="project-link">
-            <i class="fas fa-arrow-right"></i> View Project Details
+            <i class="fas fa-arrow-right"></i> View details
           </a>
         </div>
       </div>
       
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="projects.html" class="see-all-projects">
-          View All Projects <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </section>
-    
-    <section class="section">
-      <h2><i class="fas fa-file-alt" style="margin-right: 10px;"></i>Resume</h2>
-      <p style="margin-bottom: 1.8rem; font-size: 1.1rem;">
-        Download my complete resume to explore my professional journey, technical skills, and academic background in detail.
-      </p>
-      <a href="Aslam resume.pdf" download class="resume-download">
-        <i class="fas fa-download"></i> Download Resume (PDF)
+      <a href="projects.html" class="see-all-projects">
+        View all projects <i class="fas fa-arrow-right"></i>
       </a>
     </section>
     
     <section class="section">
-      <h2><i class="fas fa-paper-plane" style="margin-right: 10px;"></i>Connect With Me</h2>
-      <p style="margin-bottom: 1.8rem; font-size: 1.1rem;">
-        I'm always open to discussing data projects, collaboration opportunities, or just chatting about the latest in data science.
+      <h2><i class="fas fa-file-alt"></i>Resume</h2>
+      <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+        Download my complete resume for full details of my experience and education.
+      </p>
+      <a href="Aslam resume.pdf" download class="resume-download">
+        <i class="fas fa-download"></i> Download PDF
+      </a>
+    </section>
+    
+    <section class="section">
+      <h2><i class="fas fa-paper-plane"></i>Connect</h2>
+      <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+        Let's discuss data projects or opportunities:
       </p>
       <div class="connect-links">
         <a href="mailto:maslamnavas@gmail.com" class="connect-link">
-          <i class="fas fa-envelope"></i> Email Me
+          <i class="fas fa-envelope"></i> Email
         </a>
         <a href="https://www.linkedin.com/in/muhammad-aslamuae" target="_blank" class="connect-link">
           <i class="fab fa-linkedin"></i> LinkedIn
@@ -474,7 +372,7 @@
     </section>
     
     <footer>
-      <p>© 2023 Muhammad Aslam. Crafted with <i class="fas fa-heart" style="color: var(--accent);"></i> and data.</p>
+      <p>© 2023 Muhammad Aslam. All rights reserved.</p>
     </footer>
   </div>
 </body>
