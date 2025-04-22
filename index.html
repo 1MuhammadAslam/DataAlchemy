@@ -9,12 +9,14 @@
     :root {
       --primary: #4a6bff;
       --primary-light: #6d85ff;
-      --secondary: #2d3748;
+      --secondary: #1a1e2a;
       --accent: #ff6b6b;
-      --light: #f8fafc;
-      --gray: #94a3b8;
-      --dark-gray: #4a5568;
-      --bg-color: #f5f7fa;
+      --light: #f0f2f5;
+      --gray: #7a8496;
+      --dark-gray: #3a4252;
+      --bg-color: #1e222e;
+      --card-bg: #2a3040;
+      --text-light: #e0e4eb;
     }
     
     * {
@@ -25,78 +27,74 @@
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--secondary);
-      line-height: 1.5;
+      color: var(--text-light);
+      line-height: 1.4;
       background-color: var(--bg-color);
       background-image: 
-        linear-gradient(rgba(245, 247, 250, 0.9), rgba(245, 247, 250, 0.9)),
-        url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,30 L70,30 L70,70 L30,70 Z" fill="none" stroke="%23dbe4f0" stroke-width="0.5"/></svg>');
+        linear-gradient(rgba(30, 34, 46, 0.9), rgba(30, 34, 46, 0.9)),
+        url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,30 L70,30 L70,70 L30,70 Z" fill="none" stroke="%233a4252" stroke-width="0.5"/></svg>');
     }
     
     .container {
-      max-width: 900px;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 1.5rem;
+      padding: 1rem;
     }
     
     header {
       text-align: center;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
     }
     
     .profile-image {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      margin: 0 auto 1rem;
+      margin: 0 auto 0.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: white;
       background: linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     
     h1 {
-      font-size: 2rem;
+      font-size: 1.6rem;
       color: var(--primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
     
     .tagline {
-      font-size: 1.1rem;
-      color: var(--dark-gray);
-      margin-bottom: 1rem;
-      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 0.8rem;
     }
     
     .skills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
     }
     
     .skill-chip {
-      background-color: white;
-      color: var(--primary);
-      padding: 0.3rem 0.8rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
+      background-color: var(--card-bg);
+      color: var(--primary-light);
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
       font-weight: 500;
       border: 1px solid rgba(74, 107, 255, 0.2);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
     
     h2 {
-      font-size: 1.4rem;
-      color: var(--secondary);
-      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -104,36 +102,36 @@
     
     h2 i {
       color: var(--primary);
+      font-size: 1rem;
     }
     
     .section {
-      margin-bottom: 2rem;
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
+      background: var(--card-bg);
+      padding: 1.2rem;
+      border-radius: 6px;
     }
     
     .about-text {
-      font-size: 1rem;
-      color: var(--secondary);
-      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
     }
     
     .highlight-box {
-      background-color: rgba(74, 107, 255, 0.05);
-      padding: 1rem;
-      border-radius: 6px;
-      margin: 1rem 0;
-      border-left: 3px solid var(--primary);
+      background-color: rgba(74, 107, 255, 0.1);
+      padding: 0.8rem;
+      border-radius: 4px;
+      margin: 0.8rem 0;
+      border-left: 2px solid var(--primary);
     }
     
     .project-preview {
       display: flex;
-      gap: 1.2rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--dark-gray);
     }
     
     .project-preview:last-child {
@@ -143,22 +141,15 @@
     }
     
     .project-preview-image {
-      width: 120px;
-      height: 80px;
-      border-radius: 6px;
+      width: 100px;
+      height: 60px;
+      border-radius: 4px;
       flex-shrink: 0;
-      background-color: #e2e8f0;
+      background-color: var(--dark-gray);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--gray);
-      overflow: hidden;
-    }
-    
-    .project-preview-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
     
     .project-preview-content {
@@ -166,45 +157,44 @@
     }
     
     .project-preview-title {
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
       color: var(--primary);
     }
     
     .project-preview-tools {
-      color: var(--dark-gray);
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
+      color: var(--gray);
+      font-size: 0.75rem;
+      margin-bottom: 0.3rem;
     }
     
     .project-preview-description {
-      font-size: 0.95rem;
-      color: var(--secondary);
-      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
     }
     
     .project-link {
       display: inline-flex;
       align-items: center;
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 500;
       text-decoration: none;
     }
     
     .project-link i {
-      margin-right: 0.3rem;
-      font-size: 0.8rem;
+      margin-right: 0.2rem;
+      font-size: 0.7rem;
     }
     
     .see-all-projects {
       display: inline-block;
       text-align: center;
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       color: var(--primary);
-      font-weight: 500;
+      font-size: 0.85rem;
       text-decoration: none;
     }
     
@@ -213,64 +203,62 @@
       align-items: center;
       background: var(--primary);
       color: white;
-      padding: 0.7rem 1.2rem;
-      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
     
     .resume-download i {
-      margin-right: 0.5rem;
+      margin-right: 0.4rem;
     }
     
     .connect-links {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
     }
     
     .connect-link {
       display: inline-flex;
       align-items: center;
-      background-color: white;
+      background-color: var(--card-bg);
       color: var(--primary);
-      padding: 0.7rem 1.2rem;
-      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       border: 1px solid rgba(74, 107, 255, 0.2);
     }
     
     .connect-link i {
-      margin-right: 0.5rem;
+      margin-right: 0.4rem;
     }
     
     footer {
       text-align: center;
-      padding: 2rem 0 1rem;
+      padding: 1.5rem 0 1rem;
       color: var(--gray);
-      font-size: 0.85rem;
+      font-size: 0.75rem;
     }
     
     @media (max-width: 768px) {
       .container {
-        padding: 1rem;
+        padding: 0.8rem;
       }
       
       .project-preview {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 0.6rem;
       }
       
       .project-preview-image {
         width: 100%;
-        height: 120px;
+        height: 80px;
       }
       
       .connect-links {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 0.6rem;
       }
     }
   </style>
@@ -287,37 +275,37 @@
         <span class="skill-chip">Python</span>
         <span class="skill-chip">SQL</span>
         <span class="skill-chip">Tableau</span>
-        <span class="skill-chip">Machine Learning</span>
+        <span class="skill-chip">ML</span>
       </div>
     </header>
     
     <section class="section">
-      <h2><i class="fas fa-user"></i>About Me</h2>
+      <h2><i class="fas fa-user"></i>About</h2>
       <p class="about-text">
-        Data Analyst with a master's in Data Science from Middlesex University Dubai and practical experience in analyzing operational data, building dashboards, and driving strategic insights. Passionate about transforming raw data into business value using machine learning, BI tools, and statistical analysis.
+        Data Analyst with MSc in Data Science (Middlesex University Dubai). Experienced in operational data analysis, dashboard development, and deriving strategic insights using ML, BI tools, and statistics.
       </p>
       
       <div class="highlight-box">
-        <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--primary);">My Approach:</p>
-        <p style="font-size: 0.95rem;">I combine technical expertise with business acumen to deliver actionable insights through data exploration, cleaning, analysis, and effective visualization.</p>
+        <p style="font-weight: 600; margin-bottom: 0.3rem; color: var(--primary);">Approach:</p>
+        <p style="font-size: 0.85rem;">Technical expertise + business acumen to deliver actionable insights through data exploration, analysis, and visualization.</p>
       </div>
     </section>
     
     <section class="section">
-      <h2><i class="fas fa-project-diagram"></i>Featured Projects</h2>
+      <h2><i class="fas fa-project-diagram"></i>Projects</h2>
       
       <div class="project-preview">
         <div class="project-preview-image">
           <i class="fas fa-chart-line"></i>
         </div>
         <div class="project-preview-content">
-          <h3 class="project-preview-title">HR Analytics Dashboard</h3>
-          <p class="project-preview-tools">Power BI • Python • Logistic Regression</p>
+          <h3 class="project-preview-title">HR Analytics</h3>
+          <p class="project-preview-tools">Power BI • Python</p>
           <p class="project-preview-description">
-            Analyzed employee attrition patterns with predictive modeling to forecast resignations and identify key factors.
+            Employee attrition analysis with predictive modeling.
           </p>
-          <a href="projects.html#hr-analytics" class="project-link">
-            <i class="fas fa-arrow-right"></i> View details
+          <a href="#" class="project-link">
+            <i class="fas fa-arrow-right"></i> Details
           </a>
         </div>
       </div>
@@ -327,52 +315,52 @@
           <i class="fas fa-home"></i>
         </div>
         <div class="project-preview-content">
-          <h3 class="project-preview-title">Airbnb Revenue Prediction</h3>
-          <p class="project-preview-tools">R • Python • Tableau • Regression</p>
+          <h3 class="project-preview-title">Airbnb Revenue</h3>
+          <p class="project-preview-tools">R • Python • Tableau</p>
           <p class="project-preview-description">
-            Predictive model estimating potential revenue for Airbnb listings in London.
+            Predictive model for London listings.
           </p>
-          <a href="projects.html#airbnb" class="project-link">
-            <i class="fas fa-arrow-right"></i> View details
+          <a href="#" class="project-link">
+            <i class="fas fa-arrow-right"></i> Details
           </a>
         </div>
       </div>
       
-      <a href="projects.html" class="see-all-projects">
+      <a href="#" class="see-all-projects">
         View all projects <i class="fas fa-arrow-right"></i>
       </a>
     </section>
     
     <section class="section">
       <h2><i class="fas fa-file-alt"></i>Resume</h2>
-      <p style="margin-bottom: 1rem; font-size: 0.95rem;">
-        Download my complete resume for full details of my experience and education.
+      <p style="margin-bottom: 0.8rem; font-size: 0.85rem;">
+        Download full resume for details:
       </p>
-      <a href="Aslam resume.pdf" download class="resume-download">
-        <i class="fas fa-download"></i> Download PDF
+      <a href="#" class="resume-download">
+        <i class="fas fa-download"></i> PDF
       </a>
     </section>
     
     <section class="section">
       <h2><i class="fas fa-paper-plane"></i>Connect</h2>
-      <p style="margin-bottom: 1rem; font-size: 0.95rem;">
-        Let's discuss data projects or opportunities:
+      <p style="margin-bottom: 0.8rem; font-size: 0.85rem;">
+        Contact for opportunities:
       </p>
       <div class="connect-links">
         <a href="mailto:maslamnavas@gmail.com" class="connect-link">
           <i class="fas fa-envelope"></i> Email
         </a>
-        <a href="https://www.linkedin.com/in/muhammad-aslamuae" target="_blank" class="connect-link">
+        <a href="#" class="connect-link">
           <i class="fab fa-linkedin"></i> LinkedIn
         </a>
-        <a href="https://github.com/1MuhammadAslam" target="_blank" class="connect-link">
+        <a href="#" class="connect-link">
           <i class="fab fa-github"></i> GitHub
         </a>
       </div>
     </section>
     
     <footer>
-      <p>© 2023 Muhammad Aslam. All rights reserved.</p>
+      <p>© 2023 Muhammad Aslam</p>
     </footer>
   </div>
 </body>
