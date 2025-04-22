@@ -24,15 +24,34 @@
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--light);
       color: var(--secondary);
       line-height: 1.6;
+      background-color: #f8f9fa;
+      background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-blend-mode: overlay;
+      background-color: rgba(248, 249, 250, 0.9);
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(241, 245, 249, 0.98) 100%);
+      z-index: -1;
     }
     
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 2rem;
+      position: relative;
     }
     
     header {
@@ -66,6 +85,7 @@
       background-clip: text;
       color: transparent;
       margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     
     .tagline {
@@ -73,6 +93,11 @@
       color: var(--dark-gray);
       margin-bottom: 1.5rem;
       font-weight: 500;
+      background-color: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
     }
     
     .skills {
@@ -92,6 +117,8 @@
       font-weight: 600;
       border: 1px solid rgba(108, 99, 255, 0.2);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(5px);
+      background-color: rgba(255, 255, 255, 0.8);
     }
     
     h2 {
@@ -115,16 +142,19 @@
     
     .section {
       margin-bottom: 3.5rem;
-      background: white;
+      background: rgba(255, 255, 255, 0.85);
       padding: 2.5rem;
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
     
     .section:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.95);
     }
     
     .about-text {
@@ -139,6 +169,7 @@
       border-radius: 10px;
       margin: 2rem 0;
       border-left: 4px solid var(--primary);
+      backdrop-filter: blur(5px);
     }
     
     .project-preview {
@@ -146,6 +177,15 @@
       gap: 2rem;
       margin-bottom: 2rem;
       align-items: center;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .project-preview:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-3px);
     }
     
     .project-preview-image {
@@ -160,6 +200,13 @@
       align-items: center;
       justify-content: center;
       color: var(--gray);
+      overflow: hidden;
+    }
+    
+    .project-preview-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     
     .project-preview-content {
@@ -182,6 +229,28 @@
     .project-preview-description {
       margin-bottom: 1rem;
       color: var(--secondary);
+    }
+    
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .project-link:hover {
+      color: var(--accent);
+    }
+    
+    .project-link i {
+      margin-right: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .project-link:hover i {
+      transform: translateX(5px);
     }
     
     .see-all-projects {
@@ -269,6 +338,9 @@
       padding: 3rem 0 2rem;
       color: var(--gray);
       font-size: 0.95rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      margin-top: 2rem;
+      border-radius: 12px;
     }
     
     @media (max-width: 768px) {
@@ -291,6 +363,10 @@
       
       .project-preview-image {
         width: 100%;
+      }
+      
+      body {
+        background-attachment: scroll;
       }
     }
   </style>
@@ -330,7 +406,8 @@
       
       <div class="project-preview">
         <div class="project-preview-image">
-          <i class="fas fa-chart-line" style="font-size: 2.5rem;"></i>
+          <!-- Replace with your actual project image -->
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="HR Analytics Dashboard">
         </div>
         <div class="project-preview-content">
           <h3 class="project-preview-title">HR Analytics Dashboard</h3>
@@ -346,7 +423,8 @@
       
       <div class="project-preview">
         <div class="project-preview-image">
-          <i class="fas fa-home" style="font-size: 2.5rem;"></i>
+          <!-- Replace with your actual project image -->
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Airbnb Revenue Prediction">
         </div>
         <div class="project-preview-content">
           <h3 class="project-preview-title">Airbnb Revenue Prediction</h3>
