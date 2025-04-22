@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects | Muhammad Aslam</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6C63FF;
+      --primary-light: #8B85FF;
+      --secondary: #2D3748;
+      --accent: #FF6584;
+      --light: #F7FAFC;
+      --gray: #A0AEC0;
+      --dark-gray: #4A5568;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--light);
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .back-button:hover {
+      color: var(--accent);
+    }
+    
+    .back-button i {
+      margin-right: 0.5rem;
+    }
+    
+    .page-title {
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-detail {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 3rem;
+    }
+    
+    .project-header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 2rem;
+    }
+    
+    .project-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .project-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+    
+    .tool-tag {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    .project-content {
+      padding: 2.5rem;
+    }
+    
+    .project-section {
+      margin-bottom: 2rem;
+    }
+    
+    .section-title {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .section-title i {
+      margin-right: 0.7rem;
+    }
+    
+    .project-image {
+      width: 100%;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eee;
+    }
+    
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    
+    .project-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+    }
+    
+    .project-link i {
+      margin-right: 0.5rem;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+      }
+      
+      .project-header {
+        padding: 1.5rem;
+      }
+      
+      .project-title {
+        font-size: 1.6rem;
+      }
+      
+      .project-content {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-button">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+    
+    <h1 class="page-title">My Projects</h1>
+    
+    <div class="project-detail" id="hr-analytics">
+      <div class="project-header">
+        <h2 class="project-title">HR Analytics Dashboard</h2>
+        <p class="project-subtitle">Employee Attrition Analysis & Prediction</p>
+        <div class="project-tools">
+          <span class="tool-tag">Power BI</span>
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Logistic Regression</span>
+          <span class="tool-tag">Data Visualization</span>
+          <span class="tool-tag">Excel</span>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="project-section">
+          <h3 class="section-title"><i class="fas fa-info-circle"></i> Overview</h3>
+          <p>
+            This project involved analyzing employee data to understand attrition patterns and predict future resignations. The goal was to help HR departments identify at-risk employees and understand the key factors contributing to turnover.
+          </p>
+          <img src="https://via.placeholder.com/800x450?text=HR+Dashboard+Screenshot" alt="HR Analytics Dashboard" class="project-image">
+        </div>
+        
+        <div class="project-section">
+          <h3 class="section-title"><i class="fas fa-tasks"></i> Key Features</h3>
+          <ul style="list-style-position: inside; margin-left: 1rem;">
+            <li style="margin-bottom: 0.5rem;">Interactive Power BI dashboard with attrition trends by department, role, and tenure</li>
+            <li style="margin-bottom: 0.5rem;">Logistic regression model to predict resignation likelihood</li>
+            <li style="margin-bottom: 0.5rem;">Key driver analysis identifying top factors influencing attrition</li>
+            <li style="margin-bottom: 0.5rem;">Employee segmentation by risk level</li>
+            <li>Cost analysis of attrition impact</li>
+          </ul>
+        </div>
+        
+        <div class="project-section">
+          <h3 class="section-title"><i class="fas fa-chart-line"></i> Results</h3>
+          <p>
+            The dashboard helped identify that employees with 3-5 years tenure in certain departments had 40% higher attrition rates. The prediction model achieved 82% accuracy in identifying employees who would leave within 6 months. This enabled proactive retention measures that reduced attrition by 15% in the next quarter.
+          </p>
+        </div>
+        
+        <a href="https://github.com/1MuhammadAslam/HR-Analytics" target="_blank" class="project-link">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+    </div>
+    
+    <div class="project-detail" id="airbnb">
+      <div class="project-header">
+        <h2 class="project-title">Airbnb Revenue Prediction</h2>
+        <p class="project-subtitle">London Listings Revenue Estimation Model</p>
+        <div class="project-tools">
+          <span class="tool-tag">R</span>
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Tableau</span>
+          <span class="tool-tag">Regression Analysis</span>
+          <span class="tool-tag">Data Cleaning</span>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="project-section">
+          <h3 class="section-title"><i class="fas fa-info-circle"></i> Overview</h3>
+          <p>
+            This project analyzed London Airbnb listings to build a predictive model for estimating potential revenue. The model helps hosts optimize their pricing and listing features to maximize earnings.
+          </p>
+          <img src="https://via.placeholder.com/800x450?text=Airbnb+Analysis+Screenshot" alt="Airbnb Revenue Analysis" class="project-image">
+        </div>
+        
+        <div class="project-section">
+          <h3 class="section-title"><i class="fas fa-tasks"></i> Methodology</h3>
+          <ul style="list-style-position: inside; margin-left: 1rem;">
+            <li style="margin-bottom: 0.5rem;">Collected and cleaned data from Airbnb's London listings</li>
+            <li style="margin-bottom: 0.5rem;">Feature engineering to create meaningful predictors</li>
+            <li style="margin-bottom: 0.5rem;">Multiple regression approaches tested (linear, ridge, lasso)</li>
+            <li style="margin-bottom: 0.5rem;">Geospatial analysis of location impact</li>
+            <li>Interactive Tableau dashboard for exploration</li>
+          </ul>
+        </div>
+        
+        <div class="project-section">
+          <h3 class="section-title"><i class="fas fa-chart-line"></i> Key Findings</h3>
+          <p>
+            The model revealed that beyond location and price, the number of photos and response rate significantly impacted revenue. Listings that responded to 90%+ of inquiries within an hour earned 22% more on average. The final model explained 76% of revenue variance (R² = 0.76).
+          </p>
+        </div>
+        
+        <a href="https://github.com/1MuhammadAslam/Airbnb-Revenue" target="_blank" class="project-link">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+        <a href="https://public.tableau.com/app/profile/yourprofile" target="_blank" class="project-link" style="margin-left: 1rem;">
+          <i class="fas fa-external-link-alt"></i> View Dashboard
+        </a>
+      </div>
+    </div>
+    
+    <!-- Add more projects following the same structure -->
+    
+    <footer>
+      <p>© 2023 Muhammad Aslam. Crafted with <i class="fas fa-heart" style="color: var(--accent);"></i> and data.</p>
+    </footer>
+  </div>
+</body>
+</html>
