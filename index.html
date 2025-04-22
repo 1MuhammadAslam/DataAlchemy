@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-light: #3b82f6;
-      --secondary: #1e293b;
-      --accent: #f59e0b;
-      --light: #f8fafc;
-      --gray: #94a3b8;
-      --dark-gray: #64748b;
+      --primary: #6C63FF;
+      --primary-light: #8B85FF;
+      --secondary: #2D3748;
+      --accent: #FF6584;
+      --light: #F7FAFC;
+      --gray: #A0AEC0;
+      --dark-gray: #4A5568;
     }
     
     * {
@@ -23,14 +23,14 @@
     }
     
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f1f5f9;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--light);
       color: var(--secondary);
       line-height: 1.6;
     }
     
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 2rem;
     }
@@ -39,30 +39,39 @@
       text-align: center;
       margin-bottom: 3rem;
       padding-bottom: 2rem;
-      border-bottom: 1px solid #e2e8f0;
       position: relative;
     }
     
     .profile-image {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--primary);
+      border: 5px solid white;
       margin-bottom: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      font-weight: bold;
     }
     
     h1 {
-      font-size: 2.5rem;
-      color: var(--primary);
+      font-size: 2.8rem;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       margin-bottom: 0.5rem;
     }
     
     .tagline {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: var(--dark-gray);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       font-weight: 500;
     }
     
@@ -70,23 +79,25 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
     }
     
     .skill-chip {
-      background-color: var(--primary-light);
-      color: white;
-      padding: 0.3rem 0.8rem;
+      background-color: white;
+      color: var(--primary);
+      padding: 0.4rem 1rem;
       border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     }
     
     h2 {
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
+      font-size: 1.9rem;
+      color: var(--secondary);
+      margin-bottom: 1.8rem;
       position: relative;
       display: inline-block;
     }
@@ -94,118 +105,128 @@
     h2::after {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: -10px;
       left: 0;
-      width: 50px;
+      width: 60px;
       height: 4px;
-      background-color: var(--accent);
+      background: linear-gradient(90deg, var(--primary), var(--accent));
       border-radius: 2px;
     }
     
     .section {
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
       background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
     }
     
     .section:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
     
     .about-text {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       line-height: 1.8;
       color: var(--secondary);
     }
     
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(255, 101, 132, 0.1));
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--primary);
     }
     
-    .project-card {
-      background: white;
+    .project-preview {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+    
+    .project-preview-image {
+      width: 200px;
+      height: 120px;
       border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid #e2e8f0;
-      transition: all 0.3s ease;
-    }
-    
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .project-image {
-      height: 180px;
-      width: 100%;
       object-fit: cover;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
       background-color: #e2e8f0;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--gray);
-      font-size: 3rem;
     }
     
-    .project-content {
-      padding: 1.5rem;
+    .project-preview-content {
+      flex: 1;
     }
     
-    .project-title {
+    .project-preview-title {
       font-size: 1.3rem;
       margin-bottom: 0.5rem;
       color: var(--primary);
     }
     
-    .project-tools {
+    .project-preview-tools {
       color: var(--dark-gray);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
       font-weight: 500;
     }
     
-    .project-description {
+    .project-preview-description {
       margin-bottom: 1rem;
       color: var(--secondary);
     }
     
-    .project-link {
+    .see-all-projects {
       display: inline-flex;
       align-items: center;
-      color: var(--primary);
-      font-weight: 600;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      color: white;
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
       text-decoration: none;
-      transition: color 0.2s;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
     }
     
-    .project-link:hover {
-      color: var(--primary-light);
+    .see-all-projects:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
     }
     
-    .project-link i {
-      margin-right: 0.5rem;
+    .see-all-projects i {
+      margin-left: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .see-all-projects:hover i {
+      transform: translateX(5px);
     }
     
     .resume-download {
       display: inline-flex;
       align-items: center;
-      background-color: var(--primary);
+      background: linear-gradient(45deg, var(--primary), var(--accent));
       color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: background-color 0.2s;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
     }
     
     .resume-download:hover {
-      background-color: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
     }
     
     .resume-download i {
@@ -214,7 +235,7 @@
     
     .connect-links {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
     }
     
@@ -223,17 +244,20 @@
       align-items: center;
       background-color: white;
       color: var(--primary);
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      border: 1px solid #e2e8f0;
-      transition: all 0.2s;
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
     
     .connect-link:hover {
-      background-color: var(--primary);
+      background: linear-gradient(45deg, var(--primary), var(--accent));
       color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
     }
     
     .connect-link i {
@@ -242,9 +266,9 @@
     
     footer {
       text-align: center;
-      padding: 2rem 0;
+      padding: 3rem 0 2rem;
       color: var(--gray);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
     
     @media (max-width: 768px) {
@@ -253,11 +277,20 @@
       }
       
       h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       
-      .projects-grid {
-        grid-template-columns: 1fr;
+      .section {
+        padding: 1.8rem;
+      }
+      
+      .project-preview {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .project-preview-image {
+        width: 100%;
       }
     }
   </style>
@@ -265,122 +298,79 @@
 <body>
   <div class="container">
     <header>
-      <!-- Add your profile image here -->
-      <!-- <img src="profile.jpg" alt="Muhammad Aslam" class="profile-image"> -->
-      <div class="profile-image" style="background-color: #2563eb; color: white; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
-        MA
-      </div>
+      <div class="profile-image">MA</div>
       <h1>Muhammad Aslam</h1>
-      <p class="tagline">Data Analyst | MSc Data Science</p>
+      <p class="tagline">Transforming Data into Business Value</p>
       <div class="skills">
-        <span class="skill-chip">Excel</span>
+        <span class="skill-chip">Data Analysis</span>
         <span class="skill-chip">Power BI</span>
         <span class="skill-chip">Python</span>
         <span class="skill-chip">SQL</span>
         <span class="skill-chip">Tableau</span>
         <span class="skill-chip">Machine Learning</span>
+        <span class="skill-chip">Excel</span>
+        <span class="skill-chip">Data Visualization</span>
       </div>
     </header>
     
     <section class="section">
-      <h2><i class="fas fa-user"></i> About Me</h2>
+      <h2><i class="fas fa-user" style="margin-right: 10px;"></i>About Me</h2>
       <p class="about-text">
-        I am a data-driven problem solver with a master's in Data Science from Middlesex University Dubai. 
-        I specialize in analyzing operational data, creating interactive dashboards, and using machine learning 
-        and BI tools to transform raw data into actionable business insights. My passion lies in uncovering 
-        hidden patterns and telling compelling data stories that drive strategic decision-making.
+        Data Analyst with a master's in Data Science from Middlesex University Dubai and practical experience in analyzing operational data, building dashboards, and driving strategic insights. Passionate about transforming raw data into business value using machine learning, BI tools, and statistical analysis.
       </p>
-    </section>
-    
-    <section class="section">
-      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-image">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">HR Analytics Dashboard</h3>
-            <p class="project-tools">Power BI • Python • Excel</p>
-            <p class="project-description">
-              Analyzed employee data to understand attrition trends and built a prediction model for future resignations.
-            </p>
-            <a href="https://github.com/1MuhammadAslam/HR-Analytics" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-        </div>
-        
-        <div class="project-card">
-          <div class="project-image">
-            <i class="fas fa-home"></i>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Airbnb Revenue Prediction</h3>
-            <p class="project-tools">R • Python • Tableau</p>
-            <p class="project-description">
-              Built a predictive model using features like location, price, and reviews to estimate listing revenue.
-            </p>
-            <a href="https://github.com/1MuhammadAslam/Airbnb-Revenue" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-        </div>
-        
-        <div class="project-card">
-          <div class="project-image">
-            <i class="fas fa-chart-bar"></i>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Sales Forecasting</h3>
-            <p class="project-tools">Python • ARIMA • Prophet</p>
-            <p class="project-description">
-              Forecasted monthly product sales using time series models to support stock planning.
-            </p>
-            <a href="https://github.com/1MuhammadAslam/Sales-Forecasting" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-        </div>
-        
-        <div class="project-card">
-          <div class="project-image">
-            <i class="fas fa-file-invoice-dollar"></i>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Financial Dashboard</h3>
-            <p class="project-tools">Tableau • Excel</p>
-            <p class="project-description">
-              Created an interactive dashboard to monitor financial performance and revenue trends.
-            </p>
-            <a href="https://public.tableau.com/app/profile/yourprofile" target="_blank" class="project-link">
-              <i class="fas fa-external-link-alt"></i> View Dashboard
-            </a>
-          </div>
-        </div>
-        
-        <div class="project-card">
-          <div class="project-image">
-            <i class="fas fa-search-dollar"></i>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Fraud Detection with Benford's Law</h3>
-            <p class="project-tools">Python • Pandas • Matplotlib</p>
-            <p class="project-description">
-              Tested real datasets against Benford's Law to uncover anomalies and potential fraud cases.
-            </p>
-            <a href="https://github.com/1MuhammadAslam/Benfords-Law-Project" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View on GitHub
-            </a>
-          </div>
-        </div>
+      
+      <div class="highlight-box">
+        <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--primary);">My Approach:</p>
+        <p>I combine technical expertise with business acumen to deliver actionable insights. My process involves understanding business needs, exploring and cleaning data, applying appropriate analytical techniques, and communicating findings effectively through visualizations and reports.</p>
       </div>
     </section>
     
     <section class="section">
-      <h2><i class="fas fa-file-alt"></i> Resume</h2>
-      <p style="margin-bottom: 1.5rem;">
-        Download my full resume to learn more about my professional experience, education, and skills.
+      <h2><i class="fas fa-project-diagram" style="margin-right: 10px;"></i>Featured Projects</h2>
+      
+      <div class="project-preview">
+        <div class="project-preview-image">
+          <i class="fas fa-chart-line" style="font-size: 2.5rem;"></i>
+        </div>
+        <div class="project-preview-content">
+          <h3 class="project-preview-title">HR Analytics Dashboard</h3>
+          <p class="project-preview-tools">Power BI • Python • Logistic Regression</p>
+          <p class="project-preview-description">
+            Comprehensive analysis of employee attrition patterns with predictive modeling to forecast future resignations and identify key factors influencing employee turnover.
+          </p>
+          <a href="projects.html#hr-analytics" class="project-link">
+            <i class="fas fa-arrow-right"></i> View Project Details
+          </a>
+        </div>
+      </div>
+      
+      <div class="project-preview">
+        <div class="project-preview-image">
+          <i class="fas fa-home" style="font-size: 2.5rem;"></i>
+        </div>
+        <div class="project-preview-content">
+          <h3 class="project-preview-title">Airbnb Revenue Prediction</h3>
+          <p class="project-preview-tools">R • Python • Tableau • Regression Models</p>
+          <p class="project-preview-description">
+            Predictive model estimating potential revenue for Airbnb listings in London based on location, amenities, pricing, and review metrics.
+          </p>
+          <a href="projects.html#airbnb" class="project-link">
+            <i class="fas fa-arrow-right"></i> View Project Details
+          </a>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="projects.html" class="see-all-projects">
+          View All Projects <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2><i class="fas fa-file-alt" style="margin-right: 10px;"></i>Resume</h2>
+      <p style="margin-bottom: 1.8rem; font-size: 1.1rem;">
+        Download my complete resume to explore my professional journey, technical skills, and academic background in detail.
       </p>
       <a href="Aslam resume.pdf" download class="resume-download">
         <i class="fas fa-download"></i> Download Resume (PDF)
@@ -388,7 +378,10 @@
     </section>
     
     <section class="section">
-      <h2><i class="fas fa-link"></i> Connect</h2>
+      <h2><i class="fas fa-paper-plane" style="margin-right: 10px;"></i>Connect With Me</h2>
+      <p style="margin-bottom: 1.8rem; font-size: 1.1rem;">
+        I'm always open to discussing data projects, collaboration opportunities, or just chatting about the latest in data science.
+      </p>
       <div class="connect-links">
         <a href="mailto:maslamnavas@gmail.com" class="connect-link">
           <i class="fas fa-envelope"></i> Email Me
@@ -403,7 +396,7 @@
     </section>
     
     <footer>
-      <p>© 2023 Muhammad Aslam. All rights reserved.</p>
+      <p>© 2023 Muhammad Aslam. Crafted with <i class="fas fa-heart" style="color: var(--accent);"></i> and data.</p>
     </footer>
   </div>
 </body>
