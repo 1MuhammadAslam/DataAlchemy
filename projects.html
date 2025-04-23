@@ -131,6 +131,12 @@
       margin-top: 0.5rem;
     }
     
+    .resources-container {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
     footer {
       text-align: center;
       margin-top: 2rem;
@@ -149,6 +155,10 @@
       
       .project-content {
         padding: 1.2rem;
+      }
+      
+      .resources-container {
+        flex-direction: column;
       }
     }
   </style>
@@ -177,7 +187,7 @@
         <div class="project-section">
           <h3 class="section-title"><i class="fas fa-info-circle"></i> Overview</h3>
           <p>Analyzed employee data to understand attrition patterns and predict future resignations. The goal was to help HR departments identify at-risk employees and understand key factors contributing to turnover.</p>
-          <img src="https://raw.githubusercontent.com/1MuhammadAslam/HR-Analytics/main/HR%20Dashboard.png" alt="HR Analytics Dashboard" class="project-image">
+          <img src="images/Dashboard.png.png" alt="HR Analytics Dashboard" class="project-image">
         </div>
         
         <div class="project-section">
@@ -195,9 +205,17 @@
           <p>Identified departments with 40% higher attrition rates. Prediction model achieved 82% accuracy, enabling proactive measures that reduced attrition by 15%.</p>
         </div>
         
-        <a href="https://github.com/1MuhammadAslam/HR-Analytics" target="_blank" class="project-link">
-          <i class="fab fa-github"></i> View on GitHub
-        </a>
+        <div class="project-section">
+          <h3 class="section-title"><i class="fas fa-download"></i> Resources</h3>
+          <div class="resources-container">
+            <a href="files/HR Analytics Dashboard.pbix" class="project-link" download="HR_Analytics_Dashboard.pbix">
+              <i class="fas fa-download"></i> Download PBIX
+            </a>
+            <a href="files/HR_Analytics.csv" class="project-link" download="HR_Analytics_Data.csv">
+              <i class="fas fa-database"></i> Sample Data
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -217,7 +235,6 @@
         <div class="project-section">
           <h3 class="section-title"><i class="fas fa-info-circle"></i> Overview</h3>
           <p>Analyzed London Airbnb listings to build a predictive model for estimating potential revenue. The model helps hosts optimize pricing and listing features to maximize earnings.</p>
-          <img src="https://raw.githubusercontent.com/1MuhammadAslam/Airbnb-Revenue/main/Airbnb%20Dashboard.png" alt="Airbnb Revenue Analysis" class="project-image">
         </div>
         
         <div class="project-section">
@@ -234,13 +251,6 @@
           <h3 class="section-title"><i class="fas fa-chart-line"></i> Key Findings</h3>
           <p>Response rate and photo count significantly impacted revenue. Listings with quick responses earned 22% more. Final model explained 76% of revenue variance (R² = 0.76).</p>
         </div>
-        
-        <a href="https://github.com/1MuhammadAslam/Airbnb-Revenue" target="_blank" class="project-link">
-          <i class="fab fa-github"></i> View on GitHub
-        </a>
-        <a href="https://public.tableau.com/app/profile/yourprofile" target="_blank" class="project-link" style="margin-left: 0.5rem;">
-          <i class="fas fa-external-link-alt"></i> View Dashboard
-        </a>
       </div>
     </div>
     
